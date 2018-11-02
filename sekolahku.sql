@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 01, 2018 at 06:15 PM
+-- Generation Time: Nov 02, 2018 at 06:24 PM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.7
 
@@ -32,6 +32,7 @@ CREATE TABLE `guru` (
   `id_guru` int(11) NOT NULL,
   `nama` varchar(30) NOT NULL,
   `email` varchar(100) NOT NULL,
+  `password` varchar(20) NOT NULL,
   `alamat` varchar(500) NOT NULL,
   `jenis_kelamin` varchar(20) NOT NULL,
   `foto_guru` varchar(200) DEFAULT NULL
@@ -75,6 +76,13 @@ CREATE TABLE `mapel` (
   `nama_mapel` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `mapel`
+--
+
+INSERT INTO `mapel` (`id_mapel`, `nama_mapel`) VALUES
+(4, 'fisika');
+
 -- --------------------------------------------------------
 
 --
@@ -113,10 +121,18 @@ CREATE TABLE `siswa` (
   `id_siswa` int(11) NOT NULL,
   `nama` varchar(30) NOT NULL,
   `email` varchar(100) NOT NULL,
+  `password` varchar(20) NOT NULL,
   `alamat` varchar(500) NOT NULL,
   `jenis_kelamin` varchar(20) NOT NULL,
   `foto_siswa` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `siswa`
+--
+
+INSERT INTO `siswa` (`id_siswa`, `nama`, `email`, `password`, `alamat`, `jenis_kelamin`, `foto_siswa`) VALUES
+(6, 'Reona S', 'reon@gmail.com', '123456', 'Washington ', 'Perempuan', NULL);
 
 --
 -- Indexes for dumped tables
@@ -191,13 +207,13 @@ ALTER TABLE `jawaban`
 -- AUTO_INCREMENT for table `kelas`
 --
 ALTER TABLE `kelas`
-  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `mapel`
 --
 ALTER TABLE `mapel`
-  MODIFY `id_mapel` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_mapel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `materi`
@@ -215,7 +231,7 @@ ALTER TABLE `pertanyaan`
 -- AUTO_INCREMENT for table `siswa`
 --
 ALTER TABLE `siswa`
-  MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables
