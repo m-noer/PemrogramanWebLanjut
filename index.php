@@ -28,7 +28,7 @@
               <th scope="col">email</th>
               <th scope="col">alamat</th>
               <th scope="col">jenis_kelamin</th>
-              <th scope="col">Edit</th>
+              <th scope="col">Editan</th>
             </tr>
           </thead>
           <tbody>
